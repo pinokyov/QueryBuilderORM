@@ -36,7 +36,12 @@ Minimal, genişletilebilir bir PHP ORM (Nesne-İlişkisel Eşleştirici) kütüp
    - MySQL 8.0
    - Adminer (Veritabanı yönetim arayüzü)
 
-3. **Veritabanını İçe Aktarın (Adminer ile)**
+3. **Bağımlılıkları Yükleyin**
+   ```bash
+   docker-compose exec app composer install
+   ```
+
+4. **Veritabanını İçe Aktarın (Adminer ile)"
    1. Tarayıcınızda şu adrese gidin: [http://localhost:8080](http://localhost:8080)
    2. Giriş bilgileri:
       - Sistem: **MySQL**
@@ -47,7 +52,7 @@ Minimal, genişletilebilir bir PHP ORM (Nesne-İlişkisel Eşleştirici) kütüp
    3. "SQL komutu" sekmesine tıklayın
    4. `database.sql` dosyasının içeriğini yapıştırın ve "Yürüt" butonuna tıklayın
 
-4. **Uygulamayı Görüntüleyin**
+5. **Uygulamayı Görüntüleyin"
    - Ana uygulama: [http://localhost:8081](http://localhost:8081)
    - Veritabanı yönetimi: [http://localhost:8080](http://localhost:8080)
 
