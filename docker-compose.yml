@@ -1,0 +1,49 @@
+version: '3.8'
+
+services:
+  app:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    container_name: orm_app
+    ports:
+      - "8081:80"
+    volumes:
+      - .:/var/www/html
+    depends_on:
+      - db
+    environment:
+      - DB_HOST=orm_mysql
+      - DB_PORT=3306
+      - DB_DATABASE=query_builder_orm
+      - DB_USERNAME=orm_user
+      - DB_PASSWORD=orm_password
+      - DB_SOCKET=/var/run/mysqld/mysqld.sock
+
+  db:
+    image: mysql:8.0
+    container_name: orm_mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: query_builder_orm
+      MYSQL_USER: orm_user
+      MYSQL_PASSWORD: orm_password
+    ports:
+      - "3307:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      timeout: 5s
+      retries: 10
+
+  adminer:
+    image: adminer:latest
+    container_name: orm_adminer
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+
+volumes:
+  mysql_data:

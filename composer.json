@@ -1,0 +1,16 @@
+{
+    "name": "mini-php-orm/orm",
+    "description": "A minimal, extensible PHP ORM",
+    "type": "library",
+    "require": {
+        "php": ">=8.0",
+        "ext-pdo": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}

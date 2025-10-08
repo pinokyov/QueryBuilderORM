@@ -1,0 +1,67 @@
+# Dependency directories
+/vendor/
+/node_modules/
+
+# IDE specific files
+.idea/
+.vscode/
+*.sublime-workspace
+*.sublime-project
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Logs
+*.log
+
+# Local development files
+*.local
+
+# Composer
+composer.lock
+composer.phar
+
+# PHPUnit
+/phpunit.xml
+/phpunit.xml.dist
+
+# Build directories
+/build/
+/dist/
+
+# Debug logs
+debug.log
+
+# Local configuration overrides
+config/local.php
+
+# Cache directories
+/cache/
+*.cache
+
+# Temporary files
+/tmp/
+temp/
+
+# Local SQLite databases
+*.sqlite
+*.sqlite3
+
+# Local development server
+.php-version
+.phpunit.result.cache
+
+# Editor directories and files
+.idea
+.vs/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
